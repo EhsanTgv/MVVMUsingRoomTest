@@ -25,7 +25,7 @@ abstract class AppDatabase : RoomDatabase() {
                 synchronized(LOCK) {
                     Log.d(LOG_TAG, "Creating new database instance")
                     sInstance = Room.databaseBuilder(
-                        context                            .applicationContext,
+                        context.applicationContext,
                         AppDatabase::class.java, DATABASE_NAME
                     )
                         .build()
