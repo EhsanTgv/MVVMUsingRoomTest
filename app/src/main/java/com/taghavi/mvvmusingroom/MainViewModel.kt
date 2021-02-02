@@ -25,4 +25,6 @@ class MainViewModel(application: Application?) : AndroidViewModel(application!!)
         tasksRepository = TasksRepository(database!!)
         tasks = tasksRepository.getloadAllTasks()
     }
+
+
 }

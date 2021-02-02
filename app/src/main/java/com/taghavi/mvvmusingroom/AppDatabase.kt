@@ -15,8 +15,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun taskDao(): TaskDao?
 
     companion object {
-        private val LOG_TAG = AppDatabase::class.java
-            .simpleName
+        private val LOG_TAG = AppDatabase::class.java.simpleName
         private val LOCK = Any()
         private const val DATABASE_NAME = "todolist"
         private var sInstance: AppDatabase? = null
@@ -27,8 +26,7 @@ abstract class AppDatabase : RoomDatabase() {
                     sInstance = Room.databaseBuilder(
                         context.applicationContext,
                         AppDatabase::class.java, DATABASE_NAME
-                    )
-                        .build()
+                    ).build()
                 }
             }
             Log.d(LOG_TAG, "Getting the database instance")

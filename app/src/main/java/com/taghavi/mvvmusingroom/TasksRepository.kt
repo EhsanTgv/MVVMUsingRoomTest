@@ -11,7 +11,7 @@ class TasksRepository(var database: AppDatabase) {
         return tasks
     }
 
-    fun getloadTaskById(taskId: Int): LiveData<TaskEntry?>? {
+    fun getLoadTaskById(taskId: Int): LiveData<TaskEntry?>? {
         return database.taskDao()!!.loadTaskById(taskId)
     }
 
@@ -24,7 +24,6 @@ class TasksRepository(var database: AppDatabase) {
     }
 
     companion object {
-        private val LOG_TAG = TasksRepository::class.java
-            .simpleName
+        private val LOG_TAG = TasksRepository::class.java.simpleName
     }
 }
